@@ -45,12 +45,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .todo-app {
     width: 70%;
-    position: relative;
-    top: -20px;
+    position: fixed;
+    top: 17%;
+    bottom: 0;
+    overflow-y: auto;
+}
+.todo-app::-webkit-scrollbar {
+    display: none;
 }
 
 .row {
@@ -61,7 +67,7 @@
 }
 
 .row input {
-    flex:1;
+    flex: 1;
     padding: 16px;
     align-items: center;
     gap: 8px;
@@ -69,6 +75,9 @@
     border: 1px solid var(--Gray-700, #0D0D0D);
     background: var(--Gray-500, #262626);
     border: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .row input::placeholder {
@@ -101,12 +110,13 @@
     margin-top: 20px;
 }
 
-.task {
+.task-main{
     margin-top: 50px;
     padding-bottom: 30px;
 }
 
-.left, .priority {
+.left,
+.priority {
     display: flex;
     gap: 8px;
     align-items: center;
@@ -118,7 +128,11 @@
     font-weight: 700;
 }
 
-.task-count, .priority-count {
+.started{
+    margin-top: 60px;
+}
+.task-count,
+.priority-count {
     color: var(--Gray-200, #D9D9D9);
     font-size: 12px;
     font-weight: 700;
@@ -133,7 +147,11 @@
     font-weight: 700;
 }
 
-.tasks-section .no-task{
+.tasks-section{
+    min-height:280px;
+}
+
+.tasks-section .no-task {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,6 +166,76 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 140%;
+}
+
+ul {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+ul li {
+    width: 100%;
+    list-style: none;
+    /* display: flex; */
+    padding: 16px 8px 16px 40px;
+    /* align-items: flex-start; */
+    /* gap: 12px; */
+    user-select: none;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid var(--Gray-400, #333);
+    background: var(--Gray-500, #262626);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+    color: var(--Gray-100, #F2F2F2);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url('img/unchecked.png');
+    background-size: cover;
+    background-position: center;
+    left:10px;
+}
+
+ul li.checked {
+    color: var(--Gray-300, #808080);
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    width: 22px;
+    height: 22px;
+    background: url('img/check.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    left: 9px;
+    top: 14px;
+}
+
+ul li span{
+    width: 12.478px;
+height: 14px;
+background: url('img/delete.png');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+position: absolute;
+right:20px;
+
+}
+
+ul li span:hover{
+    background-color: #edeef020;
 }
 
 .end {
