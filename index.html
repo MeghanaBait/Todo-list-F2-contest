@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./style.css"> -->
     <link rel="stylesheet" href="style.css">
     <title>Todo list app</title>
 </head>
@@ -54,6 +53,7 @@
                 </select>
 
                 <select id="status-input">
+                    <option value="" disabled selected>Choose Status</option>
                     <option value="To-do">To-do</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Done">Done</option>
@@ -76,126 +76,46 @@
                         </defs>
                     </svg></button>
             </div>
-
-            <!-- <div class="filter-container">
-                <label for="filterStatus">Filter by Status:</label>
-                <select id="filterStatus" onchange="filterTasks()">
-                    <option value="all">All</option>
-                    <option value="todo">To-do</option>
-                    <option value="inprogress">In Progress</option>
-                    <option value="done">Done</option>
-                </select>
-    
-                <label for="filterPriority">Filter by Priority:</label>
-                <select id="filterPriority" onchange="filterTasks()">
-                    <option value="all">All</option>
-                    <option value="high">High</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
-                </select>
-            </div> -->
             
             <div class="info task-main">
                 <div class="left">
                     <h3>To-do list</h3>
-                    <div class="task-count">
-                        <p>3</p>
-                    </div>
+                    <div id="task-count" class=" task-count">0</div>
                 </div>
                 <div class="priority">
                     <h3>Low Priority</h3>
-                    <div class="priority-count" id="priority-count"> 2 of 5</div>
+                    <div class="priority-count" id="low-priority-count"> 0 of 0</div>
                 </div>
                 <div class="priority">
                     <h3>Medium Priority</h3>
-                    <div class="priority-count" id="priority-count"> 2 of 5</div>
+                    <div class="priority-count" id="medium-priority-count"> 0 of 0</div>
                 </div>
                 <div class="priority">
                     <h3>High Priority</h3>
-                    <div class="priority-count" id="priority-count"> 2 of 5</div>
+                    <div class="priority-count" id="high-priority-count"> 0 of 0</div>
                 </div>
             </div>
 
             <div class="tasks-section">
-                <div class="no-task">
-                    <img src="/img/task-list.png" alt="">
-                    <h3>You have no To-do items as of now</h3>
-                </div>
-                <ul id="list-container">
-                    <!-- <li class="checked">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                    <li class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                    <li class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                    <li class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li> -->
-                        
-                </ul>
-
-            </div>
-
-            <div class="info started">
-                <div class="left">
-                    <h3>Started</h3>
-                    <div class="task-count">
-                        <p>3</p>
-                    </div>
-                </div>
-                <div class="priority">
-                    <h3>low Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-                <div class="priority">
-                    <h3>Medium Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-                <div class="priority">
-                    <h3>High Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-            </div>
-
-            <div class="info inProgress">
-                <div class="left">
-                    <h3>In-progress</h3>
-                    <div class="task-count">
-                        <p>3</p>
-                    </div>
-                </div>
-                <div class="priority">
-                    <h3>low Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-                <div class="priority">
-                    <h3>Medium Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-                <div class="priority">
-                    <h3>High Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-            </div>
-
-
-            <div class="info completed">
-                <div class="left">
-                    <h3>Completed</h3>
-                    <div class="task-count">
-                        <p>3</p>
-                    </div>
-                </div>
-                <div class="priority">
-                    <h3>low Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-                <div class="priority">
-                    <h3>Medium Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-                <div class="priority">
-                    <h3>High Priority</h3>
-                    <div class="priority-count" id="priority-count"> 5</div>
-                </div>
-            </div>
-
-            <!-- <div class="end"></div> -->
+                <table id="todo-table">
+                  <thead>
+                    <tr>
+                      <th>Task</th>
+                      <th>Due Date</th>
+                      <th>Priority</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="todo-tbody">
+                  </tbody>
+                </table>
+                <table id="todoCount">
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+           </div>
         </div>
     </section>
 
