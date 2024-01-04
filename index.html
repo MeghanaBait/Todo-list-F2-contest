@@ -39,11 +39,27 @@
             <h1>to<span>do</span></h1>
         </div>
     </section>
+
+    
     <section class="section-body">
         <div class="todo-app">
             <div class="row">
-                <input type="text" id="input-box" placeholder="Enter Your To-do List Task">
-                <button onclick="addTask()">Add<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <input type="text" id="task-input" placeholder="Enter Your To-do List Task">
+                <input type="date" placeholder="Due Date" id="due-date-input" required>
+                <select id="priority-input" name="Priotity" required>
+                    <option value="" disabled selected>Choose Priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <select id="status-input">
+                    <option value="To-do">To-do</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Done">Done</option>
+                  </select>
+
+                <button id="add-btn" onclick="addTask()">Add<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         viewBox="0 0 16 16" fill="none">
                         <g clip-path="url(#clip0_3052_37)">
                             <path
@@ -60,12 +76,39 @@
                         </defs>
                     </svg></button>
             </div>
+
+            <!-- <div class="filter-container">
+                <label for="filterStatus">Filter by Status:</label>
+                <select id="filterStatus" onchange="filterTasks()">
+                    <option value="all">All</option>
+                    <option value="todo">To-do</option>
+                    <option value="inprogress">In Progress</option>
+                    <option value="done">Done</option>
+                </select>
+    
+                <label for="filterPriority">Filter by Priority:</label>
+                <select id="filterPriority" onchange="filterTasks()">
+                    <option value="all">All</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div> -->
+            
             <div class="info task-main">
                 <div class="left">
                     <h3>To-do list</h3>
                     <div class="task-count">
                         <p>3</p>
                     </div>
+                </div>
+                <div class="priority">
+                    <h3>Low Priority</h3>
+                    <div class="priority-count" id="priority-count"> 2 of 5</div>
+                </div>
+                <div class="priority">
+                    <h3>Medium Priority</h3>
+                    <div class="priority-count" id="priority-count"> 2 of 5</div>
                 </div>
                 <div class="priority">
                     <h3>High Priority</h3>
@@ -96,10 +139,40 @@
                     </div>
                 </div>
                 <div class="priority">
+                    <h3>low Priority</h3>
+                    <div class="priority-count" id="priority-count"> 5</div>
+                </div>
+                <div class="priority">
+                    <h3>Medium Priority</h3>
+                    <div class="priority-count" id="priority-count"> 5</div>
+                </div>
+                <div class="priority">
                     <h3>High Priority</h3>
                     <div class="priority-count" id="priority-count"> 5</div>
                 </div>
             </div>
+
+            <div class="info inProgress">
+                <div class="left">
+                    <h3>In-progress</h3>
+                    <div class="task-count">
+                        <p>3</p>
+                    </div>
+                </div>
+                <div class="priority">
+                    <h3>low Priority</h3>
+                    <div class="priority-count" id="priority-count"> 5</div>
+                </div>
+                <div class="priority">
+                    <h3>Medium Priority</h3>
+                    <div class="priority-count" id="priority-count"> 5</div>
+                </div>
+                <div class="priority">
+                    <h3>High Priority</h3>
+                    <div class="priority-count" id="priority-count"> 5</div>
+                </div>
+            </div>
+
 
             <div class="info completed">
                 <div class="left">
@@ -109,8 +182,16 @@
                     </div>
                 </div>
                 <div class="priority">
+                    <h3>low Priority</h3>
+                    <div class="priority-count" id="priority-count"> 5</div>
+                </div>
+                <div class="priority">
+                    <h3>Medium Priority</h3>
+                    <div class="priority-count" id="priority-count"> 5</div>
+                </div>
+                <div class="priority">
                     <h3>High Priority</h3>
-                    <div class="priority-count" id="priority-count">5</div>
+                    <div class="priority-count" id="priority-count"> 5</div>
                 </div>
             </div>
 
