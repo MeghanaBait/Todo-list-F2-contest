@@ -130,6 +130,44 @@ todoTable.addEventListener('click', (event) => {
 });
 
 
+const filterOption = document.querySelector(".filter-todo");
+const todoList = document.querySelector("todo-tbody");
+filterOption.addEventListener("change", filterTodo);
+
+function filterTodo(e){
+  const rowCount = todoTable.tBodies[0].rows.length;
+
+  for (let i = 0; i < rowCount; i++) {
+    const statusCell = todoTable.tBodies[0].rows[i].cells[3].textContent;
+    switch(e.target.value){
+      case "all":
+        todoTable.tBodies[0].rows[i].style.display = 'flex';
+        break;
+      case "to-do":
+        if(statusCell === "To-do"){
+          todoTable.tBodies[0].rows[i].style.display = "flex";
+        }else{
+          todoTable.tBodies[0].rows[i].style.display = "none";
+        }
+        break;
+      case "completed":
+        if(statusCell === "Done"){
+          todoTable.tBodies[0].rows[i].styl.display = "flex";
+        }else{
+          todoTable.tBodies[0].rows[i].style.display = "none";
+        }
+        break;
+      case "inprogress":
+        if(statusCell === "In Progress"){
+          todoTable.tBodies[0].rows[i].style.display = "flex";
+        }else{
+          todoTable.tBodies[0].rows[i].style.display = "none";
+        }
+        break;
+    }
+  }
+}
+
 
 
 
