@@ -131,7 +131,6 @@ todoTable.addEventListener('click', (event) => {
 
 
 const filterOption = document.querySelector(".filter-todo");
-const todoList = document.querySelector("todo-tbody");
 filterOption.addEventListener("change", filterTodo);
 
 function filterTodo(e){
@@ -141,25 +140,25 @@ function filterTodo(e){
     const statusCell = todoTable.tBodies[0].rows[i].cells[3].textContent;
     switch(e.target.value){
       case "all":
-        todoTable.tBodies[0].rows[i].style.display = 'flex';
+        todoTable.tBodies[0].rows[i].style.display = 'table-row';
         break;
       case "to-do":
         if(statusCell === "To-do"){
-          todoTable.tBodies[0].rows[i].style.display = "flex";
+          todoTable.tBodies[0].rows[i].style.display = "table-row";
         }else{
           todoTable.tBodies[0].rows[i].style.display = "none";
         }
         break;
       case "completed":
         if(statusCell === "Done"){
-          todoTable.tBodies[0].rows[i].styl.display = "flex";
+          todoTable.tBodies[0].rows[i].styl.display = "table-row";
         }else{
           todoTable.tBodies[0].rows[i].style.display = "none";
         }
         break;
       case "inprogress":
         if(statusCell === "In Progress"){
-          todoTable.tBodies[0].rows[i].style.display = "flex";
+          todoTable.tBodies[0].rows[i].style.display = "table-row";
         }else{
           todoTable.tBodies[0].rows[i].style.display = "none";
         }
