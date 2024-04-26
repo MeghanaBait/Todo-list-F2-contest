@@ -235,3 +235,11 @@ td button, .add-btn{
     background: linear-gradient(to right, #5E60CE, #4EA8DE);
     color: white;
 }
+
+@media only screen and (max-width:500px){
+    tr td:last-child {
+        display:flex;
+        flex-direction: column;
+        gap : 1rem;
+    }
+}

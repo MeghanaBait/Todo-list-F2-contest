@@ -86,7 +86,7 @@ function updateTodoCount() {
    } else if (priorityCell === 'Low') {
      lowPrio++;
    }else if(priorityCell === 'Medium'){
-    mediumPrio
+    mediumPrio++;
    }
  }
 
