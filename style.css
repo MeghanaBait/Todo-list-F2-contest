@@ -98,7 +98,6 @@
     align-items: center;
     gap: 8px;
     border-radius: 8px;
-    background: var(--Blue-Dark, #1E6F9F);
     color: var(--Gray-100, #F2F2F2);
     font-size: 14px;
     font-weight: 700;
@@ -228,7 +227,7 @@ tbody tr {
 
 
 
-td button{
+td button, .add-btn{
     margin-left: 10px;
     padding: 5px 10px;
     border-radius: 5px;
